@@ -1,0 +1,325 @@
+/*menu*/
+header{
+    background:#333;
+    color:#f2f2f2;
+    padding: 1rem 0;
+    position: sticky;
+    z-index: 100;
+    left: 0;
+    top:0;
+    right: 0;
+    height: 45px;
+}
+
+main{
+    padding-top: 6rem;
+}
+
+header a{
+    color: #cccccc;
+    text-decoration: none;
+}
+.menu{
+    width: 95%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+.logo-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo{
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 1000;
+}
+.menu-icon{
+    display: none;
+}
+.navigation ul{
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+.navigation ul li{
+    display: inline-block;
+}
+.navigation ul li a{
+    display: block;
+    padding: 0 1rem;
+    font-weight: 700;
+}
+.navigation ul li a:hover{
+    color: #f2f2f2;
+}
+.navigation ul .search-icon input{
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+}
+.navigation ul .search-icon .icon{   
+    cursor: pointer;
+}
+.navigation ul .search-icon .icon span{
+    font-size: 18px;
+    color: #cccccc;
+}
+.navigation ul .search-icon .icon span:hover{
+    color: #f2f2f2;
+}
+.icomin{
+    color: #cccccc;
+}
+.icomin:hover{
+    color: #f2f2f2;
+}
+.bi-cart3{
+    color: #cccccc;
+    cursor: pointer;
+}
+.bi-cart3:hover{
+    color: #f2f2f2;
+}
+.car{
+    position: relative;
+}
+
+
+/* REGISTER VAR TO BE ANIMATABLE*/
+@property --percentage {
+    initial-value: 0;
+    inherits: false;
+    syntax: '<number>';
+  }
+  
+  /* animating the custom prop*/
+  @keyframes updatePerc {
+    to {
+      --percentage: 100;
+    }
+  }
+  
+  :root {
+    animation: updatePerc linear; 
+    animation-timeline: scroll();
+    
+    /* create some custom props to derive different effects*/
+   --primary-color: hsl(calc(var(--percentage, 0) * 3.6), 45%, 56%);
+   --angle: calc(var(--percentage, 0) * 3.6deg);
+   --txt: calc(var(--percentage));
+  }
+  
+  /* Drawing the arc */
+  .progress:after {
+    background: conic-gradient(
+      var(--primary-color) var(--angle),
+      transparent var(--angle)
+    ); 
+  }
+  
+  /* Number as text */
+  .progress__txt:after {
+    counter-reset: myCounter var(--txt);
+    content: counter(myCounter) "%";
+    display: block;
+  }
+  
+  
+  
+    /*COSMETIC*/
+  .progress {
+    --borderWidth: 10px;
+      --size: 8rem;
+    border-radius:100%;  
+      width: var(--size);
+      height: var(--size);
+      margin: 60px auto;
+      border: 1px solid white;
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    top: 2rem;
+    right: 2rem;
+    z-index: 2;
+    font-size: 2em;
+  }
+  .progress:before {
+    border-radius: 100%;
+      content: '';
+      width: calc(var(--size) - var(--borderWidth) );
+      height: calc(var(--size) - var(--borderWidth));
+      position: absolute;
+      background: #222;
+      z-index: 1;
+  }
+  .progress:after {
+    border-radius: 100%;
+      content: '';
+      position: absolute;
+      top: calc(var(--borderWidth)  / -2);
+      left: calc(var(--borderWidth) / -2);
+      width: calc(var(--size) + var(--borderWidth));
+      height: calc(var(--size) + var(--borderWidth))
+  }
+  
+  .progress__txt {
+    z-index: 2;
+  }
+  
+  /* GENERAL DOCUMENT COSMETIC */
+  main{
+    width: min(90%, 80ch);
+    margin-inline: auto;
+  
+  }
+  img {
+    width: 100%;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    padding-top: 2rem;
+    font-family: sans-serif;
+    background: #222;
+    color: #bbb;
+  }
+  
+  h1 {
+    width: 100%;   
+    position:sticky;
+    top: 0;
+    color:  var(--primary-color);
+    background: #222;
+    font-size: 5em;
+    line-height: 0.9;
+    z-index: 1;
+    padding-block: 2rem;
+    margin-inline: -2em;
+    padding-inline: 2em;
+  }
+  p{
+    line-height: 1.75;
+  }
+
+  footer .foo-row{
+    flex-direction: column;
+}
+
+footer .foo-row .foo-col{
+    width: 100%;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+footer .foo-row .foo-col ul{
+    display: none;
+}
+
+.hm-tabs .hm-tab-link{
+    margin: 0px 10px;
+    margin-bottom: 10px;
+}
+
+/*=================================
+    ESTILOS: Footer
+==================================*/
+
+footer{
+    background: #151515;
+    padding: 80px 0px;
+}
+
+footer .foo-row{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .foo-row .foo-col{
+    width: 50%;
+}
+
+footer .foo-row .foo-col:last-child{
+    margin-left: 50px;
+}
+
+footer .foo-row .foo-col:first-child{
+    margin-right: 50px;
+}
+
+footer .foo-row .foo-col h2{
+    color: #E3E3E3;
+    line-height: 40px;
+
+    font-size: 33px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+footer form .f-input{
+    width: 100%;
+    position: relative;
+}
+
+footer form .f-input input{
+    width: 100%;
+    display: block;
+    padding: 16px 30px;
+    background: #2C2B2B;
+    border: none;
+    padding-right: 50px;
+    font-size: 15px;
+    border-radius: 25px;
+    outline: 0;
+    color: #A7A1A1;
+}
+
+footer form .f-input .hm-btn-round{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border: none;
+    font-size: 18px;margin-right: 3px;
+    cursor: pointer;
+}
+
+
+footer .foo-row .foo-col ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .foo-row .foo-col ul li{
+    width: 50%;
+    margin-bottom: 16px;
+}
+
+footer .foo-row .foo-col ul li a{
+    color: #E3E3E3;
+    font-size: 15px;
+}
+
+footer .foo-row .foo-col ul li a:hover{
+    color: var(--color-principal);
+    text-decoration: underline;
+}
+
+
+.foo-copy{
+    background: #000000;
+    padding: 40px 0px;
+}
+
+.foo-copy p{
+    text-align: center;
+    color: #E3E3E3;
+    font-size: 14px;
+    font-weight: 300;
+}
